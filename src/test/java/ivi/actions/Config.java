@@ -15,4 +15,16 @@ public class Config {
         return requireNonNull(System.getProperty("PASSWORD_NAME"),
                 "Необходимо указать параметр -DPASSWORD_NAME");
     }
+    public String getClientId() {
+        return requireNonNull(System.getProperty("CLIENT_ID"),
+                "Необходимо указать параметр -DCLIENT_ID");
+    }
+    public String getClientSecret() {
+        return requireNonNull(System.getProperty("CLIENT_SECRET"),
+                "Необходимо указать параметр -DCLIENT_SECRET");
+    }
+    public String getAddressAPI() {
+        return requireNonNull(System.getProperty("ADDRESS_API"),
+                "Необходимо указать параметр -DADDRESS_API");
+    }
 }
