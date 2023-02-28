@@ -1,4 +1,4 @@
-package ivi;
+package ivi.tests;
 
 import ivi.actions.Config;
 import ivi.actions.InitDriver;
