@@ -1,5 +1,6 @@
-package ivi.actions;
+package ivi.actions.ui;
 
+import ivi.actions.ui.OnSuccess;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;

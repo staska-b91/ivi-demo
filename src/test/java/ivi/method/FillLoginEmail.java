@@ -1,7 +1,7 @@
 package ivi.method;
 
-import ivi.actions.ClickFill;
-import ivi.actions.OnSuccess;
+import ivi.actions.ui.ClickFill;
+import ivi.actions.ui.OnSuccess;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;

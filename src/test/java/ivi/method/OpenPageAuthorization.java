@@ -1,8 +1,8 @@
 package ivi.method;
 
-import ivi.actions.ClickButton;
-import ivi.actions.OnSuccess;
-import ivi.actions.WaitForVisible;
+import ivi.actions.ui.ClickButton;
+import ivi.actions.ui.OnSuccess;
+import ivi.actions.ui.WaitForVisible;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;

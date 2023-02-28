@@ -1,4 +1,4 @@
-package ivi.actions;
+package ivi.actions.ui;
 
 /**
  * Метод реализует задержку на указанное количество мс

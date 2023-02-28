@@ -1,4 +1,4 @@
-package ivi.actions;
+package ivi.actions.ui;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 

@@ -1,4 +1,4 @@
-package ivi.actions;
+package ivi.actions.ui;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;

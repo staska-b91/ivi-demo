@@ -1,7 +1,7 @@
 package ivi;
 
 import ivi.actions.Config;
-import ivi.actions.InitDriver;
+import ivi.actions.ui.InitDriver;
 import ivi.method.FillLoginEmail;
 import ivi.method.OpenPageAuthorization;
 import org.junit.Test;
