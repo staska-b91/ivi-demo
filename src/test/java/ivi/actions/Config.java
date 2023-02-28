@@ -27,4 +27,16 @@ public class Config {
         return requireNonNull(System.getProperty("ADDRESS_API"),
                 "Необходимо указать параметр -DADDRESS_API");
     }
+    public String getDealerApi() {
+        return requireNonNull(System.getProperty("DEALER_API"),
+                "Необходимо указать параметр -DDEALER_API");
+    }
+    public String getDealerAddressApi() {
+        return requireNonNull(System.getProperty("DEALER_ADDRESS_API"),
+                "Необходимо указать параметр -DDEALER_ADDRESS_API");
+    }
+    public String getCreditorExternalId() {
+        return requireNonNull(System.getProperty("CREDITOR_EXTERNAL_ID"),
+                "Необходимо указать параметр -DCREDITOR_EXTERNAL_ID");
+    }
 }
