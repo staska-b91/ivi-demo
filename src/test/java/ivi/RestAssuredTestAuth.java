@@ -8,7 +8,7 @@ public class RestAssuredTestAuth {
     @Test
     public void testAuthRestAssured(){
         Config config = new Config();
-        String address = config.getAddressApi();
+        String address = config.getAddressAPI();
         String clientId = config.getClientId();
         String clientSecret = config.getClientSecret();
 
