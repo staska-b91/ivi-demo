@@ -39,4 +39,8 @@ public class Config {
         return requireNonNull(System.getProperty("CREDITOR_EXTERNAL_ID"),
                 "Необходимо указать параметр -DCREDITOR_EXTERNAL_ID");
     }
+    public String getImei() {
+        return requireNonNull(System.getProperty("IMEI"),
+                "Необходимо указать параметр -DIMEI");
+    }
 }
