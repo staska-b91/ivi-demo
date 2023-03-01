@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * Тест реализует открытие страницы авторизации
  * и успешный вход действующим пользователем
  */
-public class LoginTest {
+public class LoginTestUI {
 
     @Test
     public void loginWithExistingClient(){
