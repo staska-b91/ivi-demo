@@ -1,7 +1,7 @@
 package ivi;
 
+import io.qameta.allure.Step;
 import ivi.actions.Config;
-import ivi.actions.ui.InitDriver;
 import ivi.method.FillLoginEmail;
 import ivi.method.OpenPageAuthorization;
 import org.junit.Test;
@@ -15,8 +15,9 @@ public class LoginTestUI {
 
     @Test
     public void loginWithExistingClient(){
-        ChromeDriver driver = new InitDriver().createChromeDriver();
         Config config = new Config();
+        config.initDriver();  //setProperty
+        ChromeDriver driver = config.createChromeDriver();
         driver.get("https://www.ivi.ru/profile");
         new OpenPageAuthorization(driver).run();
         new FillLoginEmail(driver, config.getLogin()).run();
