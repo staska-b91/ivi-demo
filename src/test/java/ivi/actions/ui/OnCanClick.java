@@ -1,5 +1,6 @@
-package ivi.actions;
+package ivi.actions.ui;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,14 +15,12 @@ import java.time.Duration;
 public class OnCanClick {
 
     private final ChromeDriver driver;
-    private final By locator;
 
-    public OnCanClick(ChromeDriver driver, By locator) {
+    public OnCanClick(ChromeDriver driver) {
         this.driver = driver;
-        this.locator = locator;
     }
 
-    protected WebElement onCanClick() {
+    protected WebElement onCanClick(By locator) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(locator));
         return driver.findElement(locator);

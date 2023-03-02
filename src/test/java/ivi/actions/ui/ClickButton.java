@@ -1,5 +1,6 @@
-package ivi.actions;
+package ivi.actions.ui;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -11,17 +12,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class ClickButton {
 
     private final ChromeDriver driver;
-    private final By locator;
 
-    public ClickButton(ChromeDriver driver, By locator) {
+    public ClickButton(ChromeDriver driver) {
         this.driver = driver;
-        this.locator = locator;
     }
-
-    public void clickButton() {
-        new Scroll(driver, locator).scroll();
+    public void clickButton(By locator) {
+        new Scroll(driver).scroll(locator);
         new Sleep(200).sleep();
-        new OnCanClick(driver, locator).onCanClick();
+        new OnCanClick(driver).onCanClick(locator);
         driver.findElement(locator).click();
     }
 }
