@@ -1,5 +1,6 @@
 package ivi.actions.ui;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,7 +19,7 @@ public class FillText {
     }
 
     public void fillText(String text) {
-        WebElement  element = new OnSuccess(driver, locator,10).onSuccess();
+        WebElement  element = new OnSuccess(driver).onSuccess(locator);
         element.sendKeys(text);
     }
 }

@@ -1,5 +1,6 @@
 package ivi.actions.ui;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,16 +14,18 @@ import java.time.Duration;
 public class OnSuccess {
 
     private final ChromeDriver driver;
-    private final By locator;
     private final int sec;
 
-    public OnSuccess(ChromeDriver driver, By locator, int sec) {
+    public OnSuccess(ChromeDriver driver, int sec) {
         this.driver = driver;
-        this.locator = locator;
         this.sec = sec;
     }
+    public OnSuccess(ChromeDriver driver) {
+        this.driver = driver;
+        this.sec = 10;
+    }
 
-    public WebElement onSuccess() {
+    public WebElement onSuccess(By locator) {
         try {
             WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(sec));
             webDriverWait.until(ExpectedConditions.presenceOfElementLocated(locator));

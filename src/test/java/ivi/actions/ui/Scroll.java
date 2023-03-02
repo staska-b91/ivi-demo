@@ -1,5 +1,6 @@
 package ivi.actions.ui;
 
+import io.qameta.allure.Step;
 import ivi.actions.ui.OnSuccess;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -12,15 +13,12 @@ import org.openqa.selenium.interactions.Actions;
 public class Scroll {
 
     private final ChromeDriver driver;
-    private final By locator;
-
-    public Scroll(ChromeDriver driver, By locator) {
+    public Scroll(ChromeDriver driver) {
         this.driver = driver;
-        this.locator = locator;
     }
 
-    public void scroll() {
-        WebElement element = new OnSuccess(driver, locator, 10).onSuccess();
+    public void scroll(By locator) {
+        WebElement element = new OnSuccess(driver).onSuccess(locator);
         Actions actions = new Actions(driver);
         actions.moveToElement(element);
         actions.perform();

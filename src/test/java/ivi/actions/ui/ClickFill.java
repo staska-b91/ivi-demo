@@ -1,5 +1,6 @@
 package ivi.actions.ui;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -18,12 +19,11 @@ public class ClickFill {
         this.locator = locator;
         this.text = requireNonNull(text, "text не должно быть пустым");
     }
-
     public void clickFill() {
-        new ClickButton(driver, locator).clickButton();
-        new OnSuccess(driver, locator, 2).onSuccess().clear();
+        new ClickButton(driver).clickButton(locator);
+        new OnSuccess(driver, 2).onSuccess(locator);
         new Sleep(200).sleep();
-        new ClickButton(driver, locator).clickButton();
+        new ClickButton(driver).clickButton(locator);
         new FillText(driver, locator).fillText(text);
     }
 }
