@@ -30,8 +30,8 @@ public class APIAuthorization {
         model.setClientSecret(clientSecret);
 
         RequestBody body = RequestBody.create(
-                new ObjectMapper().writeValueAsString(model)
-                , MediaType.parse("application/json"));
+                new ObjectMapper().writeValueAsString(model),
+                MediaType.parse("application/json"));
 
         Request request = new Request.Builder()
                 .url(address + "/api/OAuth/access-token")
