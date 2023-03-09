@@ -1,7 +1,5 @@
 package ivi.actions.ui;
 
-import io.qameta.allure.Step;
-import ivi.actions.ui.OnSuccess;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;

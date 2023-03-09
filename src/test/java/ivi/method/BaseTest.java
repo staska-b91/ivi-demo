@@ -1,8 +1,6 @@
 package ivi.method;
 
 import io.qameta.allure.Step;
-
-import ivi.actions.Config;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
