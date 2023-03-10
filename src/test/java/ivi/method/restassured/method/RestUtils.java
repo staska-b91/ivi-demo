@@ -1,4 +1,4 @@
-package ivi.method.restassured;
+package ivi.method.restassured.method;
 
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
@@ -22,4 +22,5 @@ public class RestUtils {
         return requestSpecification
                 .post(url);
     }
+
 }
