@@ -35,7 +35,7 @@ public class ResponseAuth extends AbstractAuth {
         return token;
     }
     private UserTokenApiRequest checkThatResponseSuccess(Response response){
-        new ResponseBase(response).assertionStatusResponseSuccess();
+        new ResponseBase().assertionStatusResponseSuccess(response);
         ResponseBody responseBody = response.body();
         UserTokenApiRequest bodyModel = responseBody.as((Type) UserTokenApiRequest.class);
         Assert.assertNotNull(bodyModel.getAccessToken());

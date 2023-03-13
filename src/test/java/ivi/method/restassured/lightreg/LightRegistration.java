@@ -22,11 +22,10 @@ public class LightRegistration extends AbstractReg {
     }
     private Response makeResp(String address, String requestBody, Map<String, String> headers) {
         return RestUtils.performPost(address + getUrl(), requestBody, headers);
-    }
-    public void checkThatResponseSucces(){
-        Map<String, String> headers = sentTokenAsHeader(getHeaders(), token);
+    } public void checkThatResponseSucces(){
+        Map<String, String> headers = new ResponseBase().sentTokenAsHeader(getHeaders(), token);
         Response response = makeResp(address, body, headers);
-        new ResponseBase(response).assertionStatusResponseSuccess();
+        new ResponseBase().assertionStatusResponseSuccess(response);
 //        ResponseBody responseBody = response.body();
 //        String statusLoan = responseBody.path("status");
 //        Assert.assertEquals("SuccessApplied", statusLoan);
@@ -34,4 +33,5 @@ public class LightRegistration extends AbstractReg {
 //        String statusDevice = JsonPath.from(jsonObjectBody.toString()).getString("products[0].status");
 //        Assert.assertEquals("NotProcessed", statusDevice);
     }
+
 }

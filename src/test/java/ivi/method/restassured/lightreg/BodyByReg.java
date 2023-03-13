@@ -5,10 +5,10 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class BodyByReg {
-    private String imei;
-    private String dealerId;
-    private String dealerAddressId;
-    private String creditor;
+    private final String imei;
+    private final String dealerId;
+    private final String dealerAddressId;
+    private final String creditor;
 
     public BodyByReg(String imei, String dealerId, String dealerAddressId,
                      String creditor){
