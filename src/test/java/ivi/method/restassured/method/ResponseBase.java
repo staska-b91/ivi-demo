@@ -16,4 +16,8 @@ public class ResponseBase {
         headers.put("Authorization","Bearer " + token);
         return headers;
     }
+    public void assertionStatusResponseWithErrors(Response response) {
+        Assert.assertEquals(response.statusCode(), 400);
+    }
+
 }

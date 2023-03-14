@@ -22,5 +22,4 @@ public class RestUtils {
         return requestSpecification
                 .post(url);
     }
-
 }
