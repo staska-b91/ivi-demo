@@ -35,7 +35,7 @@ public class RestAssuredTest {
         String requestBody = makeBodyForRequest();
         new LightRegistration(address, token, requestBody).checkThatResponseSuccess();
     }
-    @Step("создание тела заппоса")
+    @Step("создание тела запроса")
     private String makeBodyForRequest(){
         Config config = new Config();
         String dealerId = config.getDealerApi();
