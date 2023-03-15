@@ -48,7 +48,7 @@ public class RestAssuredTest {
     @Step("предварительная регистрация повторная - ошибка")
     private String registrationWithError(String address, String token){
         String requestBody = makeBodyForRequest();
-        String errors = new LightRegistration(address, token, requestBody).checkThatResponseWithError();
+        String errors = new LightRegistration(address, token, requestBody).getErrorText();
         return errors;
     }
 }

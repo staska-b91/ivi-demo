@@ -2,14 +2,14 @@ package ivi.method.restassured.auth;
 
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
-import ivi.method.restassured.method.ResponseBase;
 import ivi.method.restassured.method.RestUtils;
 import ivi.response.UserTokenApiRequest;
 import org.junit.Assert;
 import java.lang.reflect.Type;
+import java.util.HashMap;
 import java.util.Map;
 
-public class ResponseAuth extends AbstractAuth {
+public class ResponseAuth extends RestUtils {
     private String address;
     private String requestBody;
     private Map<String, String> headers;
@@ -17,12 +17,12 @@ public class ResponseAuth extends AbstractAuth {
     public ResponseAuth(String address, String requestBody){
         this.address = address;
         this.requestBody = requestBody;
-        this.headers = getHeaders();
     }
 
     public String getTokenFromResponse(){
-        Map<String, String> headers = getHeaders();
-        Response response = makeResp(address + getUrl(), requestBody, headers);
+        headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        Response response = makeResp(address + "/api/OAuth/access-token", requestBody, headers);
         UserTokenApiRequest bodyModel = checkThatResponseSuccess(response);
         return readTokenFromResponse(bodyModel);
     }
@@ -35,7 +35,7 @@ public class ResponseAuth extends AbstractAuth {
         return token;
     }
     private UserTokenApiRequest checkThatResponseSuccess(Response response){
-        new ResponseBase().assertionStatusResponseSuccess(response);
+        assertionStatusResponseSuccess(response);
         ResponseBody responseBody = response.body();
         UserTokenApiRequest bodyModel = responseBody.as((Type) UserTokenApiRequest.class);
         Assert.assertNotNull(bodyModel.getAccessToken());

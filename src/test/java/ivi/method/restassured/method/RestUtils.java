@@ -5,6 +5,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import ivi.SpecificationFactory;
+import org.junit.Assert;
 import java.util.Map;
 
 public class RestUtils {
@@ -21,5 +22,15 @@ public class RestUtils {
         RequestSpecification requestSpecification = getReguestSpec(requestBody, headers);
         return requestSpecification
                 .post(url);
+    }
+    public void assertionStatusResponseSuccess(Response response) {
+        Assert.assertEquals(response.statusCode(), 200);
+    }
+    public Map<String, String> sentTokenAsHeader(Map<String, String> headers, String token){
+        headers.put("Authorization","Bearer " + token);
+        return headers;
+    }
+    public void assertionStatusResponseWithErrors(Response response) {
+        Assert.assertEquals(response.statusCode(), 400);
     }
 }
